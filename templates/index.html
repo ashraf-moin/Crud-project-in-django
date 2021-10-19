@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" style="margin-top: 50px;">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Crud Project</title>
+
+
+        <!-- Google Font CDN -->
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <!-- Fontawesome -->
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+            integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+</head>
+
+<body style="margin-top: 90px;">
+    <div style="margin-top: 70px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h2 style="width: 343px;">List of Student</h2>
+                </div>
+                <div class="col-md-4 col-xl-12 d-flex justify-content-center align-items-center"><button
+                        class="btn btn-primary d-flex align-items-center align-self-center" type="button"
+                        style="height: 38px;background-color: rgb(21,221,4);"> <a href="{% url 'stinsert' %}"> Add more  </a><i
+                            class="fa fa-plus-circle"></i></button></div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+
+                    <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                        <thead>
+                            <tr>
+                                <th>Student Id</th>
+                                <th>Student Name</th>
+                                <th>Email</th>
+                                <th>Address</th>
+                                <th>Mobile</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for displayst in crudst %}
+                            <tr class="text-black">
+                                <td >{{ displayst.id }}</td>
+                                <td>{{ displayst.stname }}</td>
+                                <td>{{ displayst.stemail }}</td>
+                                <td>{{ displayst.staddress }}</td>
+                                <td>{{ displayst.stmobile }}</td>
+                                <td>
+                                    <a href="/Delete/{{ displayst.id }}" type="button" class="btn btn-danger"><i
+                                            class="far fa-trash-alt d-xl-flex justify-content-xl-center align-items-xl-center"></i></a>
+                                    <a href="/Edit/{{ displayst.id }}"type="button" class="btn btn-success"><i
+                                            class="fas fa-plus-square d-xl-flex justify-content-xl-center align-items-xl-center"></i></a>
+                                </td>
+
+                            </tr>
+                            {% endfor %}
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
