@@ -4,7 +4,7 @@ This project is a simple CRUD example built with Django 4, Bootstrap 4, and Post
 # Getting started
 To get started, clone the repository to your local machine and run the following commands:
 
-# pip install -r requirements.txt
+pip install -r requirements.txt
 python manage.py migrate
 python manage.py runserver
 The app will then be running on http://localhost:8000/.
